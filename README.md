@@ -1,5 +1,5 @@
 ## TO-DO List
-- [ ] Alterar o dotsettings para adicionar os templates do SS14
+- [x] Alterar o dotsettings para adicionar os templates do SS14
 - [ ] Adicionar código de UI do MainScreen
 
 ## Robust Toolbox Template
