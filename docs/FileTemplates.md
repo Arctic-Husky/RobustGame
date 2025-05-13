@@ -1,0 +1,357 @@
+﻿## Client/Server Net Component
+
+#### Default file name:
+
+`FooComponent.cs`
+
+- [x] File name must be a valid identifier
+
+#### Description:
+
+`&Client/Server Net Component`
+
+### Group:
+
+`RobustToolbox`
+
+#### Options:
+
+- [x] Reformat
+
+- [x] Shorten qualified refereces
+
+#### Code:
+```cs
+$HEADER$using Robust.Shared.GameStates;
+
+namespace $NAMESPACE$;
+
+/// <inheritdoc/>
+[RegisterComponent, NetworkedComponent]
+[ComponentReference(typeof(Shared$CLASS$))]
+public sealed partial class $CLASS$ : Shared$CLASS$ {
+    $END$
+}
+```
+
+## Client/Server Net Entity System
+
+#### Default file name:
+
+`FooSystem.cs`
+
+- [x] File name must be a valid identifier
+
+#### Description:
+
+`&Client/Server Net Entity System`
+
+### Group:
+
+`RobustToolbox`
+
+#### Options:
+
+- [x] Reformat
+
+- [x] Shorten qualified refereces
+
+#### Code:
+```cs
+$HEADER$namespace $NAMESPACE$;
+
+/// <inheritdoc/>
+public sealed class $CLASS$ : Shared$CLASS$ {
+    /// <inheritdoc/>
+    public override void Initialize()
+    {
+        base.Initialize();
+        $END$
+    }
+}
+```
+
+## Entity Component
+
+#### Default file name:
+
+`FooComponent.cs`
+
+- [x] File name must be a valid identifier
+
+#### Description:
+
+`&Entity Component`
+
+### Group:
+
+`RobustToolbox`
+
+#### Options:
+
+- [x] Reformat
+
+- [x] Shorten qualified refereces
+
+#### Code:
+```cs
+$HEADER$namespace $NAMESPACE$;
+
+/// <summary>
+/// This is used for...
+/// </summary>
+[RegisterComponent]
+public sealed partial class $CLASS$ : Component {
+    $END$
+}
+```
+
+## Entity System
+
+#### Default file name:
+
+`FooSystem.cs`
+
+- [x] File name must be a valid identifier
+
+#### Description:
+
+`&Entity System`
+
+### Group:
+
+`RobustToolbox`
+
+#### Options:
+
+- [x] Reformat
+
+- [x] Shorten qualified refereces
+
+#### Code:
+```cs
+$HEADER$namespace $NAMESPACE$;
+
+/// <summary>
+/// This handles...
+/// </summary>
+public sealed class $CLASS$ : EntitySystem {
+    /// <inheritdoc/>
+    public override void Initialize()
+    {
+        $END$
+    }
+}
+```
+
+## Inheriting Prototype
+
+#### Default file name:
+
+`FooPrototype.cs`
+
+- [x] File name must be a valid identifier
+
+#### Description:
+
+`&Inheriting Prototype`
+
+### Group:
+
+`RobustToolbox`
+
+#### Options:
+
+- [x] Reformat
+
+- [x] Shorten qualified refereces
+
+#### Code:
+```cs
+$HEADER$using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
+
+namespace $NAMESPACE$;
+
+/// <summary>
+/// This is a prototype for...
+/// </summary>
+[Prototype($END$)]
+public sealed class $CLASS$ : IPrototype, IInheritingPrototype {
+    /// <inheritdoc/>
+    [IdDataField]
+    public string ID { get; } = default!;
+
+    /// <inheritdoc/>
+    [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<$CLASS$>))]
+    public string[]? Parents { get; }
+
+    /// <inheritdoc/>
+    [NeverPushInheritance]
+    [AbstractDataField]
+    public bool Abstract { get; }
+}
+```
+
+## Prototype
+
+#### Default file name:
+
+`FooPrototype.cs`
+
+- [x] File name must be a valid identifier
+
+#### Description:
+
+`&Prototype`
+
+### Group:
+
+`RobustToolbox`
+
+#### Options:
+
+- [x] Reformat
+
+- [x] Shorten qualified refereces
+
+#### Code:
+```cs
+$HEADER$using Robust.Shared.Prototypes;
+
+namespace $NAMESPACE$;
+
+/// <summary>
+/// This is a prototype for...
+/// </summary>
+[Prototype($END$)]
+public sealed partial class $CLASS$ : IPrototype {
+    /// <inheritdoc/>
+    [IdDataField]
+    public string ID { get; } = default!;
+}
+```
+
+## Shared Net Component
+
+#### Default file name:
+
+`SharedFooComponent.cs`
+
+- [x] File name must be a valid identifier
+
+#### Description:
+
+`&Shared Net Component`
+
+### Group:
+
+`RobustToolbox`
+
+#### Options:
+
+- [x] Reformat
+
+- [x] Shorten qualified refereces
+
+#### Code:
+```cs
+$HEADER$using Robust.Shared.Serialization;
+
+namespace $NAMESPACE$;
+
+/// <summary>
+/// This is used for...
+/// </summary>
+public abstract partial class $CLASS$ : Component {
+    $END$
+}
+
+/// <summary>
+/// Contains network state for $CLASS$.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class $CLASS$State : ComponentState {
+    public $CLASS$State($CLASS$ component) {
+
+    }
+}
+```
+
+## Shared Net Entity System
+
+#### Default file name:
+
+`FooSystem.cs`
+
+- [x] File name must be a valid identifier
+
+#### Description:
+
+`&Shared Net Entity System`
+
+### Group:
+
+`RobustToolbox`
+
+#### Options:
+
+- [x] Reformat
+
+- [x] Shorten qualified refereces
+
+#### Code:
+```cs
+$HEADER$namespace $NAMESPACE$;
+
+/// <summary>
+/// This handles...
+/// </summary>
+public abstract class $CLASS$ : EntitySystem {
+    /// <inheritdoc/>
+    public override void Initialize()
+    {
+        $END$
+    }
+}
+```
+
+## XAML Control
+
+#### Default file name:
+
+`Control.xaml.cs`
+
+- [x] File name must be a valid identifier
+
+#### Description:
+
+`&XAML Control`
+
+### Group:
+
+`RobustToolbox`
+
+#### Options:
+
+- [x] Reformat
+
+- [x] Shorten qualified refereces
+
+#### Code:
+```cs
+$HEADER$using Robust.Client.AutoGenerated;
+using Robust.Client.UserInterface;
+using Robust.Client.UserInterface.XAML;
+
+namespace $NAMESPACE$;
+
+[GenerateTypedNameReferences]
+public sealed partial class $CLASS$ : Control
+{
+    public $CLASS$()
+    {
+        RobustXamlLoader.Load(this);
+    }
+}
+```
