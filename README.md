@@ -1,6 +1,6 @@
 ## TO-DO List
 - [x] Alterar o dotsettings para adicionar os templates do SS14
-- [ ] Adicionar código de UI do MainScreen
+- [x] Adicionar código de UI do MainScreen
 
 ## Robust Toolbox Template
 This template is designed to provide an easy entrypoint into creating a new game on [RobustToolbox](https://github.com/space-wizards/RobustToolbox), 

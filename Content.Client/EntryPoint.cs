@@ -51,7 +51,7 @@ public sealed class EntryPoint : GameClient
         // DEVNOTE: It's recommended to look at how this works! It's for debug purposes and you probably want something prettier for the final game.
         // Additionally, state manager is the primary way you'll be changing between UIScreen instances.
         // stateManager.RequestStateChange<DebugBuiltinConnectionScreenState>();
-        stateManager.RequestStateChange<MainScreen>();
+        stateManager.RequestStateChange<MainMenu.MainMenu>();
 
         // DEVNOTE: Further setup...
         //var client = IoCManager.Resolve<IBaseClient>();

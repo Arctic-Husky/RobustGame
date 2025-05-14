@@ -1,0 +1,36 @@
+﻿<controls:MainMenuScreen
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.MainMenu.UI">
+    <!-- 
+        Parametro para estilo visual pré-definido:
+        StyleIdentifier=""
+    -->
+    <BoxContainer Name="VBox"
+                  Orientation="Vertical"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  HorizontalExpand="True"
+                  VerticalExpand="True"
+                  SeparationOverride="3">
+        <GridContainer Columns="2">
+            <Label Text="{Loc 'main-menu-username-label'}" />
+            <LineEdit Name="UsernameBox"
+                      Access="Public"
+                      PlaceHolder="{Loc 'main-menu-username-text'}"
+                      HorizontalExpand="True" 
+                      MinWidth="200" />
+            <Label Text="{Loc 'main-menu-address-label'}"/>
+            <LineEdit Name="AddressBox"
+                      Access="Public"
+                      Text="localhost"
+                      PlaceHolder="server address:port"
+                      HorizontalExpand="True" 
+                      MinWidth="200" />
+        </GridContainer>
+        <Button Name="DirectConnectButton"
+                Access="Public"
+                Text="{Loc 'main-menu-direct-connect-button'}"
+                TextAlign="Center"
+                StyleIdentifier="mainMenu"/>
+    </BoxContainer>
+</controls:MainMenuScreen>
