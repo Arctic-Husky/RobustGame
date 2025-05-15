@@ -14,7 +14,7 @@ public sealed class EntryPoint : GameShared
     // Robust calls this culture, but you might find it more fitting to call it the game
     // language. Robust doesn't support changing this mid-game. Load your config file early
     // if you want that.
-    private const string Culture = "en-US";
+    private const string Culture = "pt-BR";
 
     public override void PreInit()
     {

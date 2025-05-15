@@ -2,13 +2,15 @@
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
+using Robust.Shared;
+using Robust.Shared.Configuration;
 
 namespace Content.Client.MainMenu.UI;
 
 [GenerateTypedNameReferences]
 public sealed partial class MainMenuScreen : Control
 {
-    public MainMenuScreen()
+    public MainMenuScreen(IConfigurationManager configMan)
     {
         RobustXamlLoader.Load(this);
         
@@ -17,5 +19,8 @@ public sealed partial class MainMenuScreen : Control
         LayoutContainer.SetMarginRight(VBox, -25);
         LayoutContainer.SetMarginTop(VBox, 30);
         LayoutContainer.SetGrowHorizontal(VBox, LayoutContainer.GrowDirection.Begin);
+        
+        var currentUserName = configMan.GetCVar(CVars.PlayerName);
+        UsernameBox.Text = currentUserName;
     }
 }
