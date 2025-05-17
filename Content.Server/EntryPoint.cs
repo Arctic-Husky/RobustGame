@@ -1,3 +1,4 @@
+using Content.Shared.Localization;
 using JetBrains.Annotations;
 using Robust.Server.ServerStatus;
 using Robust.Shared.ContentPack;
@@ -29,6 +30,8 @@ public sealed class EntryPoint : GameServer
         factory.GenerateNetIds();
 
         // DEVNOTE: This is generally where you'll be setting up the IoCManager further.
+        
+        IoCManager.Resolve<ContentLocalizationManager>().Initialize();
     }
 
     public override void PostInit()

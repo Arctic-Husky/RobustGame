@@ -1,11 +1,11 @@
+using Content.Client.IoC;
 using JetBrains.Annotations;
 using Robust.Client.Graphics;
 using Robust.Client.State;
-using Robust.Client.UserInterface.States;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-using Content.Client.MainMenu;
+using Content.Shared.Localization;
 
 // DEVNOTE: Games that want to be on the hub can change their namespace prefix in the "manifest.yml" file.
 namespace Content.Client;
@@ -13,8 +13,11 @@ namespace Content.Client;
 [UsedImplicitly]
 public sealed class EntryPoint : GameClient
 {
+    [Dependency] private readonly ContentLocalizationManager _contentLoc = default!;
     public override void Init()
     {
+        ClientContentIoC.Register();
+        
         var factory = IoCManager.Resolve<IComponentFactory>();
         var prototypes = IoCManager.Resolve<IPrototypeManager>();
 
@@ -30,13 +33,14 @@ public sealed class EntryPoint : GameClient
             prototypes.RegisterIgnore(ignoreName);
         }
 
-        ClientContentIoC.Register();
-
         IoCManager.BuildGraph();
+        IoCManager.InjectDependencies(this);
 
         factory.GenerateNetIds();
 
         // DEVNOTE: This is generally where you'll be setting up the IoCManager further.
+        
+        _contentLoc.Initialize();
     }
 
     public override void PostInit()

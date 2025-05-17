@@ -1,12 +1,12 @@
 using Robust.Shared;
 using Robust.Shared.Configuration;
 
-namespace Content.Shared;
+namespace Content.Shared.GameConfigVar;
 
 // DEVNOTE: This is the same as SS14's CCVars. Except it's not named CCVars as that name is 
 // hot garbage.
 [CVarDefs]
-public sealed class GameConfigVars : CVars
+public sealed partial class GameConfigVars : CVars
 {
     // Declare persistent game config variables here.
     // ```
