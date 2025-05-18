@@ -87,8 +87,8 @@ public sealed class MainMenu : Robust.Client.State.State
         {
             _configurationManager.SetCVar(CVars.PlayerName, inputName);
             _configurationManager.SaveToFile();
-        }
 
+        }
         _setConnectingState(true);
         _netManager.ConnectFailed += _onConnectFailed;
         try
@@ -112,7 +112,7 @@ public sealed class MainMenu : Robust.Client.State.State
             case ClientRunLevel.Connecting:
                 _setConnectingState(true);
                 break;
-            case ClientRunLevel.Initialize:
+            case ClientRunLevel.Connected:
                 _setConnectingState(false);
                 _netManager.ConnectFailed -= _onConnectFailed;
                 break;
@@ -123,6 +123,8 @@ public sealed class MainMenu : Robust.Client.State.State
     {
         _isConnecting = state;
         _mainMenuScreen.DirectConnectButton.Disabled = state;
+        _mainMenuScreen.UsernameBox.Editable = !state;
+        _mainMenuScreen.AddressBox.Editable = !state;
     }
     
     private void _onConnectFailed(object? _, NetConnectFailArgs args)
